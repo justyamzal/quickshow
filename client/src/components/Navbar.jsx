@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
-import { MenuIcon, SearchIcon, XIcon } from 'lucide-react'
+import { MenuIcon, SearchIcon, XIcon, TicketPlus } from 'lucide-react'
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
   const {user} = useUser();
   const {openSignIn} = useClerk();
  
+  const navigate = useNavigate();
 
   return (
     
@@ -37,7 +38,11 @@ const Navbar = () => {
           !user ? (
             <button onClick={openSignIn} className='px-4 py-1 sm:px-7 sm:py-2 bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer'>Login</button>
           ) : (
-             <UserButton/>
+             <UserButton>
+              <UserButton.MenuItems>
+                  <UserButton.Action label="My Booking" labelIcon={<TicketPlus width={15}/>} onClick={() => navigate('/my-bookings')} />
+              </UserButton.MenuItems>
+             </UserButton>
           )
         }
         
@@ -46,7 +51,7 @@ const Navbar = () => {
       {/* Nav toggle */}
       <MenuIcon className='max-md:ml-4 md:hidden w-8 h-8 cursor-pointer' onClick={() => setIsOpen(!isOpen)}/>
 
-    </div>
+    </div> 
     
   )
 }
