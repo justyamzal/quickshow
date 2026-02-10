@@ -31,7 +31,7 @@ const Navbar = () => {
 
       </div>
 
-      {/* Nav icon */}
+      {/* Nav profile */}
       <div className='flex items-center gap-8'>
         <SearchIcon className='max-md:hidden w-6 h-6 cursor-pointer'/>
         {

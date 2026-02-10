@@ -1,4 +1,4 @@
-# quickcinema
+# QuickShow : Booking Ticket For Cinema Online
 
 this web app have features : 
 - two authorization : client and administrator
