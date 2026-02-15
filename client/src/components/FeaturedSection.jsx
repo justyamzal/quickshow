@@ -17,7 +17,10 @@ const FeaturedSection = () => {
         </div>
 
         <div></div>
-        <div></div>
+        {/* Show More Button */}
+        <div className='flex justify-center mt-20'>
+            <button className='px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer'>Show More</button>
+        </div>
     </div>
   )
 }
