@@ -7,8 +7,10 @@ import toast from 'react-hot-toast'
 const DateSelect = ({dateTime, id}) => {
 
   const navigate = useNavigate();
-    
+
   const [selected, setSelected] = useState(null);
+  
+  //booking handler
   const onBookHandler = () => {
     if(!selected)  {
         return toast('Please select a date')
